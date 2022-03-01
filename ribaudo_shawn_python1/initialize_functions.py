@@ -1,4 +1,5 @@
 from operator import add
+from pickle import FALSE, TRUE
 '''
 A function is a block of code that you can name and that performs a certain task. You can run the block many times by using the function name. The definition of a function specifies its name and the data the function needs to work. Parameters are the variables in the function that hold this data.
 '''
@@ -83,3 +84,12 @@ Boolean values can represent the state of a program or a certain condition. For 
 
 # sample output2: false
 
+def check_palindrome(x):
+    rev_string = x[::-1]
+
+    if rev_string == x:
+        return True
+    else:
+        return False
+
+print(check_palindrome('bob'))

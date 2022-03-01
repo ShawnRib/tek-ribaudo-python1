@@ -18,3 +18,26 @@ introduction_with_default_args()
 
 #TODO: In this file, go ahead and invoke the rest of the functions from the initialize_functions.py file
 
+print("Introduction with mix of default args")
+introduction_with_mix_of_default_args('Kyle')
+
+print('Product of two num')
+print('5+2='+str(product_of_two_num(5,2)))
+
+print('Add all numbs: 5 + 2 + 6 + 3')
+print(add_all_nums(5,2,6,3))
+
+print('double 5')
+print(double(5))
+
+print('fib 10')
+print(fib(10))
+
+print('subtract 5-3')
+print(subtract(5,3))
+
+print('Palindrome function')
+print('Check bob')
+print(check_palindrome('bob'))
+print('Check Jose')
+print(check_palindrome('Jose'))
