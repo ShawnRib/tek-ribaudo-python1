@@ -20,6 +20,7 @@ Use comments to explain:
 # Print to console
 from array import array
 from operator import le
+from tkinter.messagebox import showwarning
 
 
 print("This is my first print statement")
@@ -61,7 +62,22 @@ print("Hi, my name is {} {}".format(first_name, last_name))
 
 #TODO: Try introducing yourself and add your age as well. On top of first_name & last_name variable add another variable called my_age and set it to a number. 
 # Then try concatenating it using the above four strategies.  
+first_name = "Shawn"
+last_name = "Ribaudo"
+age = 29
 
+#print("Hi, my name is " + first_name + " " + last_name + '. I am ' + age ' years old.') 
+print("Hello there. My name is "+ first_name + " " + last_name + ". I am " + str(age) + " years old.")
+# use % operator to concatenate
+#print("Hi, my name is %s %s. I am %s years old" % (first_name, last_name, age))
+print("Ok. You want me to repeat my name and my age ok. Here is my %s %s. My age is %s." %(first_name, last_name, age))
+# using join() to concatenate
+#print("Hi, my name is " + " ".join([first_name, last_name]) + ". I am " + " years old.")
+#note: I use \n to make a new line with join. It will make a new line for each variable. 
+print("Oh. I see you want to double check my information include my age and my full name. \n" + "\n".join([first_name, last_name, str(age)])) 
+# using format() to concatenate
+#print("Hi, my name is {} {}. I am {} years old".format(first_name, last_name, age))
+print("Make sure you are writing this down. My name is.... {} .... {}. Dont forget about my age which is {}. \n".format(first_name, last_name, age))
 
 print("-------------------------------------------------------------------------------\n")
 
@@ -143,23 +159,52 @@ while while_loop_index < 10:
 A nested loop is a loop inside another loop. Say you need a loop that examines every pixel in an image. You could write a loop that looks at each pixel in a row and, inside that loop, add a second loop that looks at every pixel in the current column for that row.
 '''
 #TODO: write a for loop to ONLY print even numbers
+for num in range(10):
+    if(num % 2 == 0):
+        print(num)
 
 
 
 #TODO: Declare an Array with mixed data types. i.e. string, number, boolean, etc. 
 # Iterate through this list using for loop and see the output. 
-
-
+random_array    = [1, 'Tiger', True, False, 2, 'Fake', 5.214, -51]
+for item in random_array:
+    print(item)
 
 #TODO: Print the data type for each array item. 
-
+for item in random_array:
+    type(item)
 
 
 # TODO: Reverse a String: input = hello, output = olleh
+normal_string ='hello'
+print("Normal string: {}.".format(normal_string))
+reverse_string = normal_string[::-1]
+print("Reverse string: {}.".format(reverse_string))
+#If I want to create a function. I can write something like this.
+def reverse_this_string(x):
+    print(x[::-1])
 
-
+reverse_this_string(normal_string)
 
 # TODO: Reverse a number: input = 1234, output = 4321
+def reverse_int(x):
+    switch_int = str(x)[::-1]
+    print(switch_int)
+
+reverse_int(-1234)
+#note ^^^ this method is not good for negative number. It will move the - symbol. So, it need to be positive number only. 
+#if you want to use negative number, use reverse_int_negative_check()
+def reverse_int_negative_check(x):
+    if x < 0:
+        x = x * -1
+        switch_int = str(x)[::-1]
+        switch_int = int(switch_int) * -1
+    else:
+        switch_int = str(x)[::-1]
+    print(switch_int)
+
+reverse_int_negative_check(1234)
 
 
 
@@ -219,8 +264,13 @@ for index, fruit in enumerate(my_list):
 
 #TODO: Using a for loop update every item in the my_list list into dessert items
 # dessert = ["apple cake", "banana cake", "donut", "fudge", "ice cream", "jilapi"]
+dessert = ["apple cake", "banana cake", "donut", "fudge", "ice cream", "jilapi"]
+for item in my_list:
+    dessert.append(item)
 
-
+print (dessert)
+#if you want the list to be sort as well.
+print(sorted(dessert))
 
 print("-------------------- Dictionary ---------------------------------\n")
 # initialize dictionary
@@ -260,3 +310,10 @@ for key, value in country_capital_dict.items():
 #TODO: Create 5 lists of real life items and create 5 dictionaries. For example, 
 # for list, I would create a list for list of chores I need to do on weekends. i.e chores = ['laundry', 'pick-up mail', 'clean the apt']
 # for dictionary, I would have friends to phone number. friends = {'jose': '718-233-6464', 'ali': '646-232-2323'}
+item_irl = ['computer', 'dog', 'keys', 'phone', 'backpack']
+#key color, value item
+dict_irl = {'red': 'phone', 'green': 'grass', 'blue': 'towel', 'yellow': 'book', 'brown': 'dog'}
+print(item_irl)
+
+for key, value in dict_irl.items():
+    print("%s -> %s" % (key, value))
